@@ -1777,9 +1777,12 @@ function MacLib:Window(Settings)
 						ToggleFunctions.State = State
 					end
 
-                    local moduleSection: sectionargs = args.tab:Section({
-                        Side = args.Slide or args.slide or 'Left'
-                    })
+                    if args.tab and args.tab.Section then
+						local moduleSection = args.tab:Section({
+							Side = args.Slide or args.slide or 'Left'
+						})
+					end
+					
 
 					local togglebool = ToggleFunctions.Settings.Default
 					ToggleState(togglebool)
@@ -2072,9 +2075,11 @@ function MacLib:Window(Settings)
 						return finalValue
 					end
 
-                    local moduleSection: sectionargs = args.tab:Section({
-                        Side = args.Slide or args.slide or 'Left'
-                    })
+                    if args.tab and args.tab.Section then
+						local moduleSection = args.tab:Section({
+							Side = args.Slide or args.slide or 'Left'
+						})
+					end
 
 					if Flag then
 						MacLib.Options[Flag] = SliderFunctions
@@ -2608,9 +2613,11 @@ function MacLib:Window(Settings)
 						return totalHeight + spacing + padding
 					end
 
-                    local moduleSection: sectionargs = args.tab:Section({
-                        Side = args.Slide or args.slide or 'Left'
-                    })
+                    if args.tab and args.tab.Section then
+						local moduleSection = args.tab:Section({
+							Side = args.Slide or args.slide or 'Left'
+						})
+					end
 
 					local function findOption()
 						local searchTerm = searchBox.Text:lower()
@@ -4292,9 +4299,11 @@ function MacLib:Window(Settings)
 						updateFromSettings()
 					end
 
-                    local moduleSection: sectionargs = args.tab:Section({
-                        Side = args.Slide or args.slide or 'Left'
-                    })
+                    if args.tab and args.tab.Section then
+						local moduleSection = args.tab:Section({
+							Side = args.Slide or args.slide or 'Left'
+						})
+					end
 
 					if Flag then
 						MacLib.Options[Flag] = ColorpickerFunctions
